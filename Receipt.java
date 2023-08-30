@@ -5,6 +5,6 @@ public class Receipt {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = scan.nextLine();
-        //System.out.println("Hello, " + name);
+        System.out.println("Hello, " + name);
     }
 }
