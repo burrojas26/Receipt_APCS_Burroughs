@@ -7,16 +7,18 @@ public class Receipt {
         }
         System.out.println("");
         String item = "";
+        int number;
+        String[] currItem = {};
         String receiptStatement = "";
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Jasper's cookie shop. \n We sell... \n Chocolate Chip \n Gingerbread \n Sugar \n Biscotti \n Peanut Butter");
         
         while (item != "end")
         System.out.print("Enter item: ");
-        String item = scan.nextLine();
+        item = scan.nextLine();
         System.out.print("Enter the number of " + item + "s: ");
-        int number = scan.nextInt();
-        String[] currItem = {item};
+        number = scan.nextInt();
+        currItem[0] = item;
 
         
         for (int i = 0; i < currItem.length; i++) {
