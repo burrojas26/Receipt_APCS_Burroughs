@@ -13,19 +13,20 @@ public class Receipt {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Jasper's cookie shop. \n We sell... \n Chocolate Chip \n Gingerbread \n Sugar \n Biscotti \n Peanut Butter");
         
-        while (item != "end") {
+        while (true) {
             System.out.print("Enter item: ");
             item = scan.nextLine();
             System.out.println(item);
-            if (item != "end") {
+            if (item == "") {
                 System.out.println("break");
                 break;
             }
             // System.out.print("Enter the number of " + item + "s: ");
             // number = scan.nextInt();
             
+            currChars += "Item: ";
             for (int i = 0; i < item.length(); i++) {
-                if (chars <= 40) {
+                if (chars <= 33) {
                     currChars = currChars + (item.charAt(i));
                     chars++;
                 }
@@ -37,7 +38,9 @@ public class Receipt {
                 }
                 
             }
-            
+            receipt += currChars + "\n";
+            currChars = "";
+            chars = 0;
         }
 
         receipt += currChars + "\n";
