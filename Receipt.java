@@ -5,6 +5,8 @@ public class Receipt {
         
         
         String item = "";
+        String receipt = "";
+        String currChars = "";
         int number;
         int chars = 0;
         String receiptStatement = "";
@@ -14,8 +16,8 @@ public class Receipt {
         while (item != "end") {
             System.out.print("Enter item: ");
             item = scan.nextLine();
-            System.out.print("Enter the number of " + item + "s: ");
-            number = scan.nextInt();
+            // System.out.print("Enter the number of " + item + "s: ");
+            // number = scan.nextInt();
             for (int i = 0; i < 40; i++) {
             System.out.print("*");
             
@@ -23,8 +25,12 @@ public class Receipt {
             System.out.println("");
             for (int i = 0; i < item.length(); i++) {
                 if (chars <= 40) {
-                    System.out.print(item.charAt(i));
+                    currChars = currChars + (item.charAt(i));
                     chars++;
+                }
+                else {
+                    receipt += currChars + "\n";
+                    currChars = item.charAt(i);
                 }
                 
             }
