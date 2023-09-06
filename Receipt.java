@@ -16,13 +16,14 @@ public class Receipt {
         while (item != "end") {
             System.out.print("Enter item: ");
             item = scan.nextLine();
+            System.out.println(item);
+            if (item != "end") {
+                System.out.println("break");
+                break;
+            }
             // System.out.print("Enter the number of " + item + "s: ");
             // number = scan.nextInt();
-            for (int i = 0; i < 40; i++) {
-            System.out.print("*");
             
-            }
-            System.out.println("");
             for (int i = 0; i < item.length(); i++) {
                 if (chars <= 40) {
                     currChars = currChars + (item.charAt(i));
@@ -30,12 +31,22 @@ public class Receipt {
                 }
                 else {
                     receipt += currChars + "\n";
-                    currChars = item.charAt(i);
+                    currChars = "";
+                    currChars += item.charAt(i);
+                    chars = 1;
                 }
                 
             }
             
         }
+
+        receipt += currChars + "\n";
+        for (int i = 0; i < 40; i++) {
+            System.out.print("*");
+            
+        }
+        System.out.println("");
+        System.out.print(receipt);
     }
      
 }
