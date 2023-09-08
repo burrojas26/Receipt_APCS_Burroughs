@@ -29,11 +29,11 @@ public class Receipt {
                     chars = 1;
                 }
             }
-            receipt += currChars + "- $1.99\n";
+            receipt += currChars + " - $1.99\n";
             currChars = "";
             chars = 0;
         }
-        receipt += currChars + "\n";
+        receipt += currChars + "\n\n";
         for (int i = 0; i < 40; i++) {
             System.out.print("*"); 
         }
